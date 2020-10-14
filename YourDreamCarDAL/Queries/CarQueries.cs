@@ -29,7 +29,7 @@ namespace YourDreamCarDAL.Queries
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                using MySqlDataReader reader = cmd.ExecuteReader();
+                MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     cars.Add(new CarDTO()
