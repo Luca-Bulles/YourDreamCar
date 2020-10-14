@@ -31,7 +31,7 @@ namespace YourDreamCarDAL.Queries
                 using MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-
+                    
                 }
             }
         }
