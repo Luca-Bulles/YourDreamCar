@@ -6,5 +6,7 @@ namespace YourDreamCarDAL.Queries
 {
     class AccountQueries
     {
+      
     }
+ 
 }
