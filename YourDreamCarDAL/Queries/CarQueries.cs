@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using YourDreamCarDAL.DTO;
 using MySql.Data.MySqlClient;
+using YourDreamCarInterfaces;
 
 namespace YourDreamCarDAL.Queries
 {
-    class CarQueries
+    public class CarQueries
     {
         public string ConnectionString { get; set; }
 
