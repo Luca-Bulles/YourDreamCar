@@ -13,10 +13,5 @@ namespace YourDreamCarLogic.Logic
         {
             return CarQueries.GetAllCars();
         }
-
-        public IEnumerable<ICar> GetAllCars()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

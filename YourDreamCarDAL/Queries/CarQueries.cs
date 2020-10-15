@@ -5,6 +5,7 @@ using YourDreamCarDAL.DTO;
 using MySql.Data.MySqlClient;
 using YourDreamCarInterfaces;
 using YourDreamCarInterfaces.Queries;
+using YourDreamCarInterfaces.DAL;
 
 namespace YourDreamCarDAL.Queries
 {
@@ -21,10 +22,10 @@ namespace YourDreamCarDAL.Queries
             return new MySqlConnection(ConnectionString);
         }
         //READ in CRUD
-        public IEnumerable<ICar> GetAllCars()
+        public IEnumerable<ICarDTO> GetAllCars()
         {
             string query = "Select * FROM cars_cars;";
-            List<ICar> cars = new List<ICar>();
+            List<ICarDTO> cars = new List<ICarDTO>();
 
             using (MySqlConnection conn = GetConnection())
             {
@@ -50,6 +51,11 @@ namespace YourDreamCarDAL.Queries
                 }
             }
             return cars;
+        }
+
+        IEnumerable<ICar> ICarQueries.GetAllCars()
+        {
+            throw new NotImplementedException();
         }
     }
 }

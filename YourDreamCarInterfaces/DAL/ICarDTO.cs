@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using YourDreamCarInterfaces.DAL;
 
-namespace YourDreamCarDAL.DTO
+namespace YourDreamCarInterfaces.DAL
 {
-    class CarDTO: ICarDTO
+    public interface ICarDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -15,6 +14,5 @@ namespace YourDreamCarDAL.DTO
         public int Year { get; set; }
         public string Description { get; set; }
         public string ImageSrc { get; set; }
-
     }
 }
