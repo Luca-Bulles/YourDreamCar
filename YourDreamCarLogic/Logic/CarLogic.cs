@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using YourDreamCarInterfaces;
 using YourDreamCarInterfaces.Logic;
+using YourDreamCarInterfaces.Queries;
 
 namespace YourDreamCarLogic.Logic
 {
-    class CarLogic: ICarLogic
+    public class CarLogic: ICarLogic
     {
         public IEnumerable<ICar> GetAllAnimals()
         {

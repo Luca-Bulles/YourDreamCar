@@ -4,10 +4,11 @@ using System.Text;
 using YourDreamCarDAL.DTO;
 using MySql.Data.MySqlClient;
 using YourDreamCarInterfaces;
+using YourDreamCarInterfaces.Queries;
 
 namespace YourDreamCarDAL.Queries
 {
-    public class CarQueries
+    public class CarQueries: ICarQueries
     {
         public string ConnectionString { get; set; }
 
