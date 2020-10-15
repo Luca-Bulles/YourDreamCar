@@ -19,10 +19,10 @@ namespace YourDreamCarDAL.Queries
             return new MySqlConnection(ConnectionString);
         }
         //READ in CRUD
-        public void GetAllCars()
+        public IEnumerable<ICar> GetAllCars()
         {
             string query = "Select * FROM cars_cars;";
-            var cars = new List<CarDTO>();
+            List<ICar> cars = new List<ICar>();
 
             using (MySqlConnection conn = GetConnection())
             {
@@ -47,6 +47,7 @@ namespace YourDreamCarDAL.Queries
                     
                 }
             }
+            return cars;
         }
     }
 }
