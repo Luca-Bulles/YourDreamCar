@@ -7,5 +7,6 @@ namespace YourDreamCarInterfaces.Queries
     public interface ICarQueries
     {
         IEnumerable<ICar> GetAllCars();
+        ICar GetById(ICar car);
     }
 }

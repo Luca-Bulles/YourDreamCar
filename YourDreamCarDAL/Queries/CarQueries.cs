@@ -57,5 +57,24 @@ namespace YourDreamCarDAL.Queries
         {
             throw new NotImplementedException();
         }
+
+        public ICar GetById(ICar car)
+        {
+            string query = "SELECT * FROM cars_cars WHERE Id = @Id; ";
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", car.Id);
+                cmd.Parameters.AddWithValue("@Name", car.Name);
+                cmd.Parameters.AddWithValue("@Model", car.Model);
+                cmd.Parameters.AddWithValue("@Horsepower", car.HorsePower);
+                cmd.Parameters.AddWithValue("@Price", car.Price);
+                cmd.Parameters.AddWithValue("@Year", car.Year);
+                cmd.Parameters.AddWithValue("@Description", car.Description);
+                cmd.Parameters.AddWithValue("@ImageSrc", car.ImageSrc);
+            }
+            return car;
+        }
     }
 }

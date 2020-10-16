@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using YourDreamCar.Models;
+using YourDreamCarInterfaces.DAL;
 
 namespace YourDreamCar.Controllers
 {
@@ -39,7 +40,7 @@ namespace YourDreamCar.Controllers
         }
         public IActionResult Admin()
         {
-            return View(ICarDTO)
+            return View(ICarDTO);
         }
     }
 }
