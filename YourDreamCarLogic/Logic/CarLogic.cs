@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Renci.SshNet.Security.Cryptography.Ciphers.Modes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using YourDreamCarInterfaces;
@@ -9,9 +10,14 @@ namespace YourDreamCarLogic.Logic
 {
     public class CarLogic: ICarLogic
     {
-        public IEnumerable<ICar> GetAllAnimals()
+        private readonly ICarQueries carQueries;
+        public CarLogic(ICarQueries _carQueries)
         {
-            return CarQueries.GetAllCars();
+            this.carQueries = _carQueries;
+        }
+        public IEnumerable<ICar> GetAllCars()
+        {
+            return carQueries.GetAllCars();
         }
     }
 }
