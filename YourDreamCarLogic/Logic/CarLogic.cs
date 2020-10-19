@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using YourDreamCarInterfaces;
+using YourDreamCarInterfaces.DAL;
 using YourDreamCarInterfaces.Logic;
 using YourDreamCarInterfaces.Queries;
 
@@ -15,7 +16,7 @@ namespace YourDreamCarLogic.Logic
         {
             this.carQueries = _carQueries;
         }
-        public IEnumerable<ICar> GetAllCars()
+        public IEnumerable<ICarDTO> GetAllCars()
         {
             return carQueries.GetAllCars();
         }

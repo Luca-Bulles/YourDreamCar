@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\YourDreamCarDAL\YourDreamCarDAL.csproj" />
     <ProjectReference Include="..\YourDreamCarInterfaces\YourDreamCarInterfaces.csproj" />
+    <ProjectReference Include="..\YourDreamCarLogic\YourDreamCarLogic.csproj" />
   </ItemGroup>
 
 

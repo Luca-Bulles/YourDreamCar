@@ -22,7 +22,7 @@ namespace YourDreamCarDAL.Queries
             return new MySqlConnection(ConnectionString);
         }
         //READ in CRUD
-        public IEnumerable<ICarDTO> GetAllCars()
+        IEnumerable<ICarDTO> ICarQueries.GetAllCars()
         {
             string query = "Select * FROM cars_cars;";
             List<ICarDTO> cars = new List<ICarDTO>();
@@ -52,11 +52,12 @@ namespace YourDreamCarDAL.Queries
             }
             return cars;
         }
-
+        /*
         IEnumerable<ICar> ICarQueries.GetAllCars()
         {
             throw new NotImplementedException();
         }
+        */
 
         public ICar GetById(ICar car)
         {
