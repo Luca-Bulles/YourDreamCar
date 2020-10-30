@@ -52,12 +52,6 @@ namespace YourDreamCarDAL.Queries
             }
             return cars;
         }
-        /*
-        IEnumerable<ICar> ICarQueries.GetAllCars()
-        {
-            throw new NotImplementedException();
-        }
-        */
 
         public ICar GetById(ICar car)
         {
