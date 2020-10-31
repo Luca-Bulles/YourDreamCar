@@ -52,7 +52,27 @@ namespace YourDreamCarDAL.Queries
             }
             return cars;
         }
+        //Create un CRUD
+        public void CreateCar(ICar car)
+        {
+            string query = "INSERT INTO cars_cars VALUES (@Id, @Name, @Model, @HorsePower, @Price, @Year, @Description, @ImageSrc); ";
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", car.Id);
+                cmd.Parameters.AddWithValue("@Name", car.Name);
+                cmd.Parameters.AddWithValue("@Model", car.Model);
+                cmd.Parameters.AddWithValue("@HorsePower", car.HorsePower);
+                cmd.Parameters.AddWithValue("@Price", car.Price);
+                cmd.Parameters.AddWithValue("@Year", car.Year);
+                cmd.Parameters.AddWithValue("@Description", car.Description);
+                cmd.Parameters.AddWithValue("@ImageSrc", car.ImageSrc);
 
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
         public ICar GetById(ICar car)
         {
             string query = "SELECT * FROM cars_cars WHERE Id = @Id; ";
