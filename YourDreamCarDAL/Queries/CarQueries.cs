@@ -96,6 +96,19 @@ namespace YourDreamCarDAL.Queries
             }
 
         }
+        //Delete in CRUD
+        public void DeleteCar(int id)
+        {
+            string query = "DELETE FROM cars_cars WHERE Id = @Id;";
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
         public ICar GetById(ICar car)
         {
             string query = "SELECT * FROM cars_cars WHERE Id = @Id; ";
