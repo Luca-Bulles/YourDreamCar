@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourDreamCar", "YourDreamCa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourDreamCarDAL", "YourDreamCarDAL\YourDreamCarDAL.csproj", "{4C8B08DF-510B-430F-84DF-7363DDE0D755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourDreamCarInterfaces", "YourDreamCarInterfaces\YourDreamCarInterfaces.csproj", "{2E20CF33-7FE8-462E-B435-DAB6C5194AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourDreamCarInterfaces", "YourDreamCarInterfaces\YourDreamCarInterfaces.csproj", "{2E20CF33-7FE8-462E-B435-DAB6C5194AD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourDreamCarLogic", "YourDreamCarLogic\YourDreamCarLogic.csproj", "{0BB84733-254F-48A7-A8E6-52099B98EF36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourDreamCarLogic", "YourDreamCarLogic\YourDreamCarLogic.csproj", "{0BB84733-254F-48A7-A8E6-52099B98EF36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourDreamCarFactory", "YourDreamCarFactory\YourDreamCarFactory.csproj", "{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0BB84733-254F-48A7-A8E6-52099B98EF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BB84733-254F-48A7-A8E6-52099B98EF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BB84733-254F-48A7-A8E6-52099B98EF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

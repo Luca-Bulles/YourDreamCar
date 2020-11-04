@@ -45,5 +45,12 @@ namespace YourDreamCar.Controllers
             return View(carViewModel);
             
         }
+        [HttpPost]
+        public ActionResult Create(CarViewModel car)
+        {
+            carlogic.CreateCar(car);
+
+            return RedirectToAction("Admin");
+        }
     }
 }
