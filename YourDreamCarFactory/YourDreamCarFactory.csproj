@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YourDreamCarInterfaces\YourDreamCarInterfaces.csproj" />
+    <ProjectReference Include="..\YourDreamCarLogic\YourDreamCarLogic.csproj" />
+  </ItemGroup>
+
 </Project>

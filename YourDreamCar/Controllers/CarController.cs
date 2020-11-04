@@ -4,20 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using YourDreamCar.Models;
+using YourDreamCarFactory;
 using YourDreamCarInterfaces.Logic;
 
 namespace YourDreamCar.Controllers
 {
     public class CarController : Controller
     {
-        private readonly ICarLogic carLogic;
-        public CarController(ICarLogic _carLogic)
+        private readonly ICarLogic _carLogic;
+        public CarController()
         {
-            this.carLogic = _carLogic;
+            _carLogic = CarFactory.GetCarLogic();
         }
         public IActionResult Admin()
         {
-            var allCars = carLogic.GetAllCars();
+            var allCars = _carLogic.GetAllCars();
             var cars = new List<CarViewModel>();
             foreach (var car in allCars)
             {
@@ -40,15 +41,35 @@ namespace YourDreamCar.Controllers
         public ActionResult Edit()
         {
             CarViewModel carViewModel = new CarViewModel();
-            carLogic.GetById(carViewModel);
+            _carLogic.GetById(carViewModel);
 
             return View(carViewModel);
             
         }
         [HttpPost]
+        public ActionResult Edit(CarViewModel car)
+        {
+            _carLogic.EditCar(car);
+
+            return RedirectToAction("Admin");
+        }
+        public ActionResult Delete(int id)
+        {
+            _carLogic.DeleteCar(id);
+
+            return RedirectToAction("Admin");
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            var car = new CarViewModel();
+
+            return View(car);
+        }
+        [HttpPost]
         public ActionResult Create(CarViewModel car)
         {
-            carlogic.CreateCar(car);
+            _carLogic.CreateCar(car);
 
             return RedirectToAction("Admin");
         }
