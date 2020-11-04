@@ -9,5 +9,8 @@ namespace YourDreamCarInterfaces.Queries
     {
         IEnumerable<ICarDTO> GetAllCars();
         ICar GetById(ICar car);
+        void CreateCar(ICar car);
+        void EditCar(ICar car);
+        void DeleteCar(int id);
     }
 }
