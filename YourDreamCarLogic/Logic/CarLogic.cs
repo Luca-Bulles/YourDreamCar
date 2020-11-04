@@ -20,5 +20,23 @@ namespace YourDreamCarLogic.Logic
         {
             return carQueries.GetAllCars();
         }
+        public ICar GetById(ICar car)
+        {
+            return carQueries.GetById(car);
+        }
+        public ICar EditCar(ICar car)
+        {
+            carQueries.EditCar(car);
+
+            return car;
+        }
+        public void DeleteCar(int id)
+        {
+            carQueries.DeleteCar(id);
+        }
+        public void CreateCar(ICar car)
+        {
+            carQueries.CreateCar(car);
+        }
     }
 }

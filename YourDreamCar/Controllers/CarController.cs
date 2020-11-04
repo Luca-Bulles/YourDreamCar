@@ -36,5 +36,14 @@ namespace YourDreamCar.Controllers
             }
             return View(cars);
         }
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            CarViewModel carViewModel = new CarViewModel();
+            carLogic.GetById(carViewModel);
+
+            return View(carViewModel);
+            
+        }
     }
 }
