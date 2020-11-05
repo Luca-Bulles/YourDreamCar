@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YourDreamCarInterfaces;
 
 namespace YourDreamCar.Models
 {
-    public class CarViewModel: YourDreamCarInterfaces.DAL.ICarDTO
+    public class CarViewModel: ICar
     {
         public int Id { get; set; }
         public string Name { get; set; }

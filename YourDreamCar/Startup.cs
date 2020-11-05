@@ -28,6 +28,7 @@ namespace YourDreamCar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //Dependecy Injection
             services.AddScoped<ICarQueries, CarQueries>();
             services.AddScoped<ICarLogic, CarLogic>();
         }
