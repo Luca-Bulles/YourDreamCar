@@ -58,7 +58,8 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageSrc)
+                @*@Html.DisplayFor(modelItem => item.ImageSrc)*@
+                <div class="col-5 img-fluid"><img src="~/Images/@Html.DisplayFor(modelItem =>item.Id) car.jpg" style="width:350px; height:200px;" /></div>
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new {  id= item.Id  }) |
