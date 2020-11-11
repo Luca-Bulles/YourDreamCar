@@ -9,8 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using YourDreamCarDAL.Queries;
+using YourDreamCarInterfaces.DAL;
 using YourDreamCarInterfaces.Logic;
 using YourDreamCarInterfaces.Queries;
+using YourDreamCarLogic.Account;
 using YourDreamCarLogic.Logic;
 
 namespace YourDreamCar
@@ -31,6 +33,8 @@ namespace YourDreamCar
             //Dependecy Injection
             services.AddScoped<ICarQueries, CarQueries>();
             services.AddScoped<ICarLogic, CarLogic>();
+            services.AddScoped<IAccountRegisterQueries, AccountRegisterQueries>();
+            services.AddScoped<IAccountRegisterLogic, AccountRegisterLogic>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

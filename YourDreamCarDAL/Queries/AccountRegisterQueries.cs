@@ -6,7 +6,7 @@ using YourDreamCarInterfaces.DAL;
 
 namespace YourDreamCarDAL.Queries
 {
-    public class AccountRegisterQueries
+    public class AccountRegisterQueries : IAccountRegisterQueries
     {
         public string ConnectionString { get; set; }
 
@@ -31,7 +31,7 @@ namespace YourDreamCarDAL.Queries
                 cmd.Parameters.AddWithValue("@LastName", account.LastName);
                 cmd.Parameters.AddWithValue("@DateOfBirth", account.DateOfBirth);
                 cmd.Parameters.AddWithValue("@Email", account.Email);
-                cmd.Parameters.AddWithValue("@Address", account.Adress);
+                cmd.Parameters.AddWithValue("@Adress", account.Adress);
                 cmd.Parameters.AddWithValue("@City", account.City);
                 cmd.Parameters.AddWithValue("@Username", account.Username);
                 cmd.Parameters.AddWithValue("@Password", account.Password);

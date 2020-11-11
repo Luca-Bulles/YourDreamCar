@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using YourDreamCarInterfaces.DAL;
+using YourDreamCarInterfaces.Logic;
 
 namespace YourDreamCarLogic.Account
 {
-    public class AccountRegisterLogic
+    public class AccountRegisterLogic : IAccountRegisterLogic
     {
         private readonly IAccountRegisterQueries accountRegister;
         public AccountRegisterLogic(IAccountRegisterQueries _accountRegister)
