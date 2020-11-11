@@ -28,6 +28,8 @@ namespace YourDreamCarLogic.Account
                 Password = account.Password,
                 Role = account.Role
             };
+
+            accountRegister.CreateUser(_account);
         }
     }
 }
