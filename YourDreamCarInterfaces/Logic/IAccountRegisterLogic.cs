@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using YourDreamCarInterfaces.DAL;
 
 namespace YourDreamCarInterfaces.Logic
 {
-    interface IAccountRegisterLogic
+    public interface IAccountRegisterLogic
     {
+        void CreateUser(IAccount account);
     }
 }
