@@ -24,6 +24,8 @@ namespace YourDreamCar.Models
         public float Price { get; set; }
 
         [Required(ErrorMessage = "Input the build year of the car")]
+        [Range(1900, 2021,
+            ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public int Year { get; set; }
 
         [Required(ErrorMessage = "Input the description of the car")]
