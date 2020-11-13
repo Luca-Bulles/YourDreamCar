@@ -17,5 +17,6 @@ namespace YourDreamCarDAL.Queries
         {
             return new MySqlConnection(ConnectionString);
         }
+
     }
 }
