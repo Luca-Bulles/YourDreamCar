@@ -34,6 +34,31 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="CreateUser">Register</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav mr-auto mr-sm-2">
+                        @{
+                            var Email = new Byte[20];
+                            bool nameOK = Context.Session.TryGetValue("Email", out Email);
+                        }
+                        @{
+                            if (nameOK)
+                            {
+                                string EmailString = System.Text.Encoding.UTF8.GetString(Email);
+                                <li class="nav-item">
+                                    <a class="nav-link text-black-50" asp-area="" asp-controller="Login" asp-action="LogOut">Logout @EmailString</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-black-50" asp-area="" asp-controller="Account" asp-action="CreateUser">Registreren</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-black-50" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+
                 </div>
             </div>
         </nav>
