@@ -69,9 +69,14 @@ namespace YourDreamCar.Controllers
         [HttpPost]
         public ActionResult Create(CarViewModel car)
         {
-            _carLogic.CreateCar(car);
+            if (ModelState.IsValid)
+            {
+                _carLogic.CreateCar(car);
 
-            return RedirectToAction("Admin");
+                return RedirectToAction("Admin");
+            }
+            return View();
+
         }
     }
 }
