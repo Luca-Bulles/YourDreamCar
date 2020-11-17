@@ -35,6 +35,7 @@ namespace YourDreamCar.Models
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Create a password")]
+        [StringLength(50, MinimumLength = 8, ErrorMessage = "Value for {0} must be between {2} and {1} characters ")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Choose between 'Gebruiker' and 'Medewerker'")]
