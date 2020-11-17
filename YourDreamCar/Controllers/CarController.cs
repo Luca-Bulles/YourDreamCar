@@ -49,9 +49,15 @@ namespace YourDreamCar.Controllers
         [HttpPost]
         public ActionResult Edit(CarViewModel car)
         {
-            _carLogic.EditCar(car);
+            if (ModelState.IsValid)
+            {
+                _carLogic.EditCar(car);
 
-            return RedirectToAction("Admin");
+                return RedirectToAction("Admin");
+            }
+
+            return View();
+            
         }
         public ActionResult Delete(int id)
         {
@@ -69,9 +75,14 @@ namespace YourDreamCar.Controllers
         [HttpPost]
         public ActionResult Create(CarViewModel car)
         {
-            _carLogic.CreateCar(car);
+            if (ModelState.IsValid)
+            {
+                _carLogic.CreateCar(car);
 
-            return RedirectToAction("Admin");
+                return RedirectToAction("Admin");
+            }
+            return View();
+
         }
     }
 }
