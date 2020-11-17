@@ -28,7 +28,13 @@ namespace YourDreamCar.Controllers
         [HttpPost]
         public ActionResult CreateUser(AccountViewModel account)
         {
-            accountRegisterLogic.CreateUser(account);
+            if (ModelState.IsValid)
+            {
+                accountRegisterLogic.CreateUser(account);
+
+                return RedirectToAction("Index", "Login");
+            }
+            
             return View();
         }
     }

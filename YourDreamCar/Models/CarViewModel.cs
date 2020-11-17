@@ -18,9 +18,13 @@ namespace YourDreamCar.Models
         public string Model { get; set; }
 
         [Required(ErrorMessage = "Input the amount of horsepower of the car")]
+        [Range(200, 4000,
+            ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public int HorsePower { get; set; }
 
         [Required(ErrorMessage = "Input the price in euro's of the car")]
+        [Range(1, 99999999,
+            ErrorMessage = "Value for {0} must be between {1} and {2}.")]
         public float Price { get; set; }
 
         [Required(ErrorMessage = "Input the build year of the car")]
