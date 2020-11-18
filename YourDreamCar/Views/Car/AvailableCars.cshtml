@@ -1,0 +1,35 @@
+﻿@model IEnumerable<YourDreamCar.Models.CarViewModel>
+
+@{
+    ViewData["Title"] = "AvailableCars";
+}
+
+<div class="h2 pt-3 text-center font-weight-bold">Choose one of our many luxurious cars!</div>
+<hr />
+
+<div class="col-container">
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card mb-4">
+                    <div class="card-img-top bd-placeholder-img" style="width:inherit; height:250px">
+                        <img class="img-fluid" style="width:auto; height:auto" src="~/Images/@Html.DisplayFor(modelItem =>item.Id) car.jpg" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(Modelitem =>item.Name) | @Html.DisplayFor(Modelitem => item.Model)</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-secondary">@Html.ActionLink("Read more!", "Details", "Vehicle", new { Id = item.Id})</button>
+                            </div>
+                            <small class="text-muted">Price €@Html.DisplayFor(Modelitem => item.Price)</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

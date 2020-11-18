@@ -84,5 +84,27 @@ namespace YourDreamCar.Controllers
             return View();
 
         }
+        public IActionResult AvailableCars()
+        {
+
+            var allCars = _carLogic.GetAllCars();
+            var cars = new List<CarViewModel>();
+            foreach (var car in allCars)
+            {
+                cars.Add(new CarViewModel
+                {
+                    Id = car.Id,
+                    Name = car.Name,
+                    Model = car.Model,
+                    HorsePower = car.HorsePower,
+                    Price = car.Price,
+                    Year = car.Year,
+                    Description = car.Description,
+                    ImageSrc = car.ImageSrc
+                }
+                );
+            }
+            return View(cars);
+        }
     }
 }
