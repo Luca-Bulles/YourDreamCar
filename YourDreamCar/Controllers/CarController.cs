@@ -106,5 +106,9 @@ namespace YourDreamCar.Controllers
             }
             return View(cars);
         }
+        public IActionResult UnderConstruction()
+        {
+            return View();
+        }
     }
 }
