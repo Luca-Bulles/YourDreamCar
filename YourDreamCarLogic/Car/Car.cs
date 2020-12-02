@@ -1,8 +1,9 @@
 ﻿using System;
+using YourDreamCarInterfaces;
 
 namespace YourDreamCarLogic
 {
-    public class Car
+    public class Car : ICar
     {
         public int Id { get; set; }
         public string Name { get; set; }
