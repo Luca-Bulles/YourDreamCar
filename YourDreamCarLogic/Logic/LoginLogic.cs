@@ -15,6 +15,7 @@ namespace YourDreamCarLogic.Logic
         }
         public bool Login(ILogin user)
         {
+            //Hier bepalen of de user is ingelogd ipv in dal
             return loginQueries.Login(user);
         }
     }

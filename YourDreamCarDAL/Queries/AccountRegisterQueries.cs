@@ -3,24 +3,26 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using YourDreamCarInterfaces.Adapters;
 using YourDreamCarInterfaces.DAL;
 
 namespace YourDreamCarDAL.Queries
 {
     public class AccountRegisterQueries : IAccountRegisterQueries
     {
-        private readonly ConnectionString _connection;
+        private readonly MySqlConnection _connection;
 
-        public AccountRegisterQueries(ConnectionString connection)
+        public AccountRegisterQueries(IConnectionStringAdapter connectionAdapter)
         {
-            this._connection = connection;
+            MySqlConnection sqlConnection = new MySqlConnection(connectionAdapter.GetConnectionString());
+            this._connection = sqlConnection;
         }
         public void CreateUser(IAccount account)
         {
             string query = "INSERT INTO cars_account VALUES (@Id, @Name, @MiddleName, @LastName, @DateOfBirth, @Email, @Adress, @City, @Username, SHA1(@Password), @Role); ";
-            _connection.SqlConnection.Open();
+            _connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand(query, _connection.SqlConnection);
+            MySqlCommand cmd = new MySqlCommand(query, _connection);
             cmd.Parameters.AddWithValue("@Id", account.Id);
             cmd.Parameters.AddWithValue("@Name", account.Name);
             cmd.Parameters.AddWithValue("@MiddleName", account.MiddleName);
@@ -34,7 +36,7 @@ namespace YourDreamCarDAL.Queries
             cmd.Parameters.AddWithValue("@Role", account.Role);
 
             cmd.ExecuteNonQuery();
-            _connection.SqlConnection.Close();
+            _connection.Close();
         }
     }
 }
