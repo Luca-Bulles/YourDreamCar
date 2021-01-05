@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using YourDreamCar.Adapters;
 using YourDreamCar.Models;
 using YourDreamCarFactory;
+using YourDreamCarInterfaces.Adapters;
 using YourDreamCarInterfaces.Logic;
 
 namespace YourDreamCar.Controllers
@@ -14,7 +15,7 @@ namespace YourDreamCar.Controllers
     public class CarController : Controller
     {
         private readonly ICarLogic _carLogic;
-        public CarController() // en dus hier injecteren
+        public CarController(IConnectionStringAdapter adapter) // en dus hier injecteren
         {
             // Wat je hier zou kunnen doen is je connectionstring adapter gebruiken voor het dorsturen van de connectionstring naar de factory :D
             _carLogic = CarFactory.GetCarLogic();
