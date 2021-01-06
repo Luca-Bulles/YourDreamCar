@@ -15,7 +15,15 @@ namespace YourDreamCarLogic.Logic
         }
         public bool Login(ILogin user)
         {
-            return loginQueries.Login(user);
+            loginQueries.Login(user);
+            if(user.UserId > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

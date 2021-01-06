@@ -6,6 +6,6 @@ namespace YourDreamCarInterfaces.DAL
 {
     public interface IAccountLoginQueries
     {
-        bool Login(ILogin user);
+        ILogin Login(ILogin user);
     }
 }
