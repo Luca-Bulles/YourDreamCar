@@ -17,9 +17,8 @@ namespace YourDreamCarDAL.Queries
             MySqlConnection sqlConnection = new MySqlConnection(connectionAdapter.GetConnectionString());
             this._connection = sqlConnection;
         }
-        public bool Login(ILogin user)
+        public ILogin Login(ILogin user)
         {
-            bool login = false;
 
             _connection.Open();
             using (MySqlCommand query = new MySqlCommand("SELECT * FROM cars_account WHERE Email = @Email AND Password = SHA1(@Password);", _connection))
@@ -36,12 +35,11 @@ namespace YourDreamCarDAL.Queries
                         user.UserId = reader.GetInt32(0);
                         user.Email = reader.GetString(1);
                     }
-                    login = true;
                 }
 
             }
             _connection.Close();
-            return login;
+            return user;
 
         }
     }
