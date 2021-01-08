@@ -6,7 +6,6 @@ using MySql.Data.MySqlClient;
 using YourDreamCarInterfaces;
 using YourDreamCarInterfaces.Queries;
 using YourDreamCarInterfaces.DAL;
-using ConnectionStringHandler;
 using YourDreamCarInterfaces.Adapters;
 
 namespace YourDreamCarDAL.Queries
