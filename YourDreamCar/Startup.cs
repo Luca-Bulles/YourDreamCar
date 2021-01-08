@@ -17,6 +17,8 @@ using YourDreamCarInterfaces.Queries;
 using YourDreamCarLogic.Account;
 using YourDreamCarLogic.Logic;
 using ConnectionStringHandler;
+using YourDreamCarInterfaces.Adapters;
+using YourDreamCar.Adapters;
 
 namespace YourDreamCar
 {
@@ -52,7 +54,8 @@ namespace YourDreamCar
             services.AddScoped<IAccountRegisterLogic, AccountRegisterLogic>();
             services.AddScoped<ILoginLogic, LoginLogic>();
             services.AddScoped<IAccountLoginQueries, AccountLoginQueries>();
-            services.AddTransient(_ => new ConnectionStringHandler.ConnectionString(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<IConnectionStringAdapter, ConnectionStringAdapter>();
+            //services.AddTransient(_ => new ConnectionStringHandler.ConnectionString(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
