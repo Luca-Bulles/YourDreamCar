@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConnectionStringHandler\ConnectionStringHandler.csproj" />
     <ProjectReference Include="..\YourDreamCarFactory\YourDreamCarFactory.csproj" />
     <ProjectReference Include="..\YourDreamCarInterfaces\YourDreamCarInterfaces.csproj" />
     <ProjectReference Include="..\YourDreamCarLogic\YourDreamCarLogic.csproj" />

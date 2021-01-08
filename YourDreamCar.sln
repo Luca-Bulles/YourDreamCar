@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourDreamCarLogic", "YourDr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourDreamCarFactory", "YourDreamCarFactory\YourDreamCarFactory.csproj", "{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionStringHandler", "ConnectionStringHandler\ConnectionStringHandler.csproj", "{B4E4AF64-6589-49F5-97E5-55AECEE85C6A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9B1C8D-3307-4BF6-B110-CE51224BEF7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4E4AF64-6589-49F5-97E5-55AECEE85C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4E4AF64-6589-49F5-97E5-55AECEE85C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4E4AF64-6589-49F5-97E5-55AECEE85C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4E4AF64-6589-49F5-97E5-55AECEE85C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
