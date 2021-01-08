@@ -14,7 +14,7 @@ namespace YourDreamCarDAL.Queries
     {
         private readonly MySqlConnection _connection;
 
-        public CarQueries(IConnectionStringAdapter connectionAdapter)//geef connectionadpater mee constructor
+        public CarQueries(IConnectionStringAdapter connectionAdapter)
         {
             _connection = new MySqlConnection(connectionAdapter.GetConnectionString());
         }
