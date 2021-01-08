@@ -17,9 +17,7 @@ namespace YourDreamCarDAL.Queries
 
         public CarQueries(IConnectionStringAdapter connectionAdapter)//geef connectionadpater mee constructor
         {
-            //haal connection uit adapter
-            MySqlConnection sqlConnection = new MySqlConnection(connectionAdapter.GetConnectionString());
-            this._connection = sqlConnection;
+            _connection = new MySqlConnection(connectionAdapter.GetConnectionString());
         }
         //READ in CRUD
         IEnumerable<ICarDTO> ICarQueries.GetAllCars()
